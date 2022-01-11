@@ -36,6 +36,11 @@ function App() {
         <Route path="3Q1uEeH5q" element={<SquareInputs target="OSCAR"/>} />
         <Route path="409KbOytI" element={<SquareInputs target="NBE123"/>} />
         <Route path="0OS7Jjf1h" element={<SquareInputs target="luftkonditioneringsapparat"/>} />
+
+        <Route path="r" element={<SquareInputs target="OSCAR"/>} />
+        <Route path="g" element={<SquareInputs target="NBE123"/>} />
+        <Route path="b" element={<SquareInputs target="luftkonditioneringsapparat"/>} />
+
       </Routes>
     </div>
 
