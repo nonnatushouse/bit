@@ -33,6 +33,7 @@ function App() {
     <div className='page-container'>
       <Routes>
         <Route index element={<Home />} />
+        <Route path="pumpuli" element={<SquareInputs target="SALET"/>} />
         <Route path="3Q1uEeH5q" element={<SquareInputs target="OSKAR"/>} />
         <Route path="409KbOytI" element={<SquareInputs target="NBE913"/>} />
         <Route path="0OS7Jjf1h" element={<SquareInputs target="luftkonditioneringsapparat"/>} />

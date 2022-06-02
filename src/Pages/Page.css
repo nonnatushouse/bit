@@ -17,6 +17,7 @@
   align-items: center;
   justify-content: center;
   max-width: 24rem;
+  caret-color: transparent;
 
 }
 
@@ -36,6 +37,14 @@
 
 .wrong-answer {
   color: red;
+}
+
+.not-visible {
+  visibility: hidden;
+}
+
+.visible {
+  visibility: visible;
 }
 
 .long-input {

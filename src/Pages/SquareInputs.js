@@ -1,12 +1,14 @@
 import React,  { useRef, useState } from "react";
 import "./Page.css";
 import clsx from 'clsx';
-
+import { useWindowSize } from "react-use";
+import Confetti from 'react-confetti'
 
 export default function SquareInputs({target}) {
     const valueRef = useRef('')
     const [verdict, setVerdict] = useState({match: false, outputString: ""})
     const refs = useRef([]);
+    const { width, height } = useWindowSize()
 
     const inputs = Array.from( {length:target.length}, (v, i) => (
         <input 
@@ -62,7 +64,7 @@ export default function SquareInputs({target}) {
     function handleSubmit(event) {
         event.preventDefault();
         if (target.toLocaleUpperCase() === valueRef.current) {
-            setVerdict({match: true, outputString: "Success!"})
+            setVerdict({match: true, outputString: "HAPPY BIRTHDAY!"})
         } else {
             setVerdict({match: false, outputString: "E för Error"})
         }
@@ -72,7 +74,17 @@ export default function SquareInputs({target}) {
 
 
     return(
-
+        <>
+        { verdict.match &&
+        <Confetti
+        className={clsx(verdict.match ? "visible" : "not-visible")}
+        width={width}
+        height={height}
+        confettiSource={{x: 0, y: 0, w: width, h:10}}
+        initialVelocityY={{ min: 0, max: 10 }}
+        numberOfPieces={250}/>
+        }
+      
         <div className="page-container">
             <div className={clsx("verdict-box", verdict.match ? "right-answer" : "wrong-answer")}>
                 <div>{verdict.outputString}</div>
@@ -88,6 +100,7 @@ export default function SquareInputs({target}) {
                 </form>
             </div>
         </div>
+        </>
     );
 
 }
